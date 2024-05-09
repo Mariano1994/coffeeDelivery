@@ -1,8 +1,10 @@
+import Header from "./components/Header";
+
 const App = () => {
   return (
     <>
-      <div className=" font-['baloo_2']">
-        <h1>Coffee Delivery</h1>
+      <div className=" bg-background h-screen w-screen">
+        <Header />
       </div>
     </>
   );
