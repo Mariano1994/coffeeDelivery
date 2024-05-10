@@ -20,6 +20,9 @@ export default {
         headingFont: "Baloo+2",
         textFont: "roboto",
       },
+      backgroundImage: {
+        hero: 'url("./assets/background.png")',
+      },
     },
   },
   plugins: [],
