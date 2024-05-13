@@ -15,6 +15,7 @@ export default {
         "base-text": "#574f4d",
         "base-label": "#8d8686",
         background: "#fafafa",
+        "base-card": "#f3f2f2",
       },
       fontFamily: {
         headingFont: "Baloo+2",

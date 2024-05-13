@@ -51,7 +51,7 @@ const Testimonials = () => {
 
         <span className="text-[1.8rem] font-medium">
           <span className="text-yellow-dark font-extrabold">+50.000</span> cafes
-          entregados no ultimo ano
+          entregados no último ano
         </span>
       </div>
     </>

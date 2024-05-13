@@ -18,7 +18,7 @@ const Services = () => {
               <Timer size={30} weight="fill" />
             </div>
             <span className="text-[1.8rem] font-light">
-              Entrega rapida e rastreada
+              Entrega rápida e rastreada
             </span>
           </div>
         </div>
@@ -29,7 +29,7 @@ const Services = () => {
               <Package size={30} weight="fill" />
             </div>
             <span className="text-[1.8rem] font-light">
-              Embalagem mantem o cafe intacto
+              Embalagem mantem o café intacto
             </span>
           </div>
           <div className="flex items-center gap-6">
@@ -37,7 +37,7 @@ const Services = () => {
               <Coffee size={30} weight="fill" />
             </div>
             <span className="text-[1.8rem] font-light">
-              Entrega rapida e rastreada
+              O cafe chega quentinho até você
             </span>
           </div>
         </div>
