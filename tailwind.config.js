@@ -17,6 +17,7 @@ export default {
         background: "#fafafa",
         "base-card": "#f3f2f2",
         "base-button": "#e6e5e5",
+        "base-input": "#EDEDED",
       },
       fontFamily: {
         headingFont: "Baloo+2",
