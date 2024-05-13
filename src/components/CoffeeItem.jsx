@@ -1,4 +1,3 @@
-import { dammyData } from "../utils/dammyData";
 import { ShoppingCart } from "@phosphor-icons/react";
 
 const CoffeeItem = ({ coffeeData }) => {

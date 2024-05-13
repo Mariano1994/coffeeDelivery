@@ -30,7 +30,7 @@ const HeroSection = () => {
           <ArrowFatLinesDown
             size={28}
             weight="fill"
-            className="text-yellow mt-[15rem]"
+            className="text-yellow mt-[15rem] animate-pulse"
           />
         </div>
       </div>
