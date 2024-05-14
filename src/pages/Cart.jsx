@@ -27,28 +27,28 @@ const Cart = () => {
 
               <div className="mt-[1.5rem] flex flex-col gap-[0.5rem] mb-[2rem]">
                 <div className="flex items-center justify-between">
-                  <span className=" text-[1.8rem] text-base-text">
+                  <span className=" text-[1.6rem] text-base-text">
                     {" "}
                     Total de items
                   </span>
-                  <span className=" text-[1.8rem] text-base-text">
+                  <span className=" text-[1.6rem] text-base-text">
                     {" "}
                     2000 kz
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className=" text-[1.8rem] text-base-text">
+                  <span className=" text-[1.6rem] text-base-text">
                     {" "}
                     Entrega
                   </span>
-                  <span className=" text-[1.8rem] text-base-text"> 300 kz</span>
+                  <span className=" text-[1.6rem] text-base-text"> 300 kz</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className=" text-[2.2rem] font-semibold text-base-subtitle">
+                  <span className=" text-[2rem] font-semibold text-base-subtitle">
                     {" "}
                     Total a Pagar
                   </span>
-                  <span className=" text-[2.2rem] font-semibold text-base-subtitle">
+                  <span className=" text-[2rem] font-semibold text-base-subtitle">
                     {" "}
                     2300
                   </span>
