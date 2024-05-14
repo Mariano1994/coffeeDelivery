@@ -1,25 +1,64 @@
 import AddressForm from "../components/AddressForm";
-import { MapPin } from "@phosphor-icons/react";
 import PaymentOptinos from "../components/PaymentOptions";
+import CartCoffeeItem from "../components/CartCoffeeItem";
 
 const Cart = () => {
   return (
     <>
-      <div className="mx-[135px] bg-background mt-[70px] h-screen">
+      <div className="mx-[135px] bg-background mt-[70px] pb-[3rem]">
         <div className="flex items-start justify-between">
           <div className="flex flex-col gap-8">
             <strong className="text-[2.5rem] font-['baloo_2']">
               Complete o seu pedido
             </strong>
 
-            <div className="flex flex-col justify-center gap-8 flex-1 w-[640px]">
+            <div className="flex flex-col justify-center gap-8 flex-1 w-[670px]">
               <AddressForm />
               <PaymentOptinos />
             </div>
           </div>
-          <div>
-            <strong>nken</strong>
-            <div className="w-[448px] h-[498px] bg-base-card"></div>
+          <div className=" flex flex-col gap-8">
+            <strong className="text-[2.5rem] font-['baloo_2']">
+              Cafés selecionados
+            </strong>
+            <div className="w-[448px] h-auto bg-base-card rounded-tr-[35px] rounded-bl-[35px] rounded-tl-lg rounded-br-lg px-[40px]">
+              <CartCoffeeItem />
+              <CartCoffeeItem />
+
+              <div className="mt-[1.5rem] flex flex-col gap-[0.5rem] mb-[2rem]">
+                <div className="flex items-center justify-between">
+                  <span className=" text-[1.8rem] text-base-text">
+                    {" "}
+                    Total de items
+                  </span>
+                  <span className=" text-[1.8rem] text-base-text">
+                    {" "}
+                    2000 kz
+                  </span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className=" text-[1.8rem] text-base-text">
+                    {" "}
+                    Entrega
+                  </span>
+                  <span className=" text-[1.8rem] text-base-text"> 300 kz</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className=" text-[2.2rem] font-semibold text-base-subtitle">
+                    {" "}
+                    Total a Pagar
+                  </span>
+                  <span className=" text-[2.2rem] font-semibold text-base-subtitle">
+                    {" "}
+                    2300
+                  </span>
+                </div>
+
+                <button className="w-full py-[1.5rem] text-white bg-yellow rounded-xl text-[1.4rem] mt-8 font-bold hover:brightness-95">
+                  {"Confirmar Pedido".toUpperCase()}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
