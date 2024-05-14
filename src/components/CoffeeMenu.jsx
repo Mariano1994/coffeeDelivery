@@ -12,8 +12,8 @@ const CoffeeMenu = () => {
         </h2>
         <input
           type="text"
-          placeholder="Procurar por cafes"
-          className="-mt-[5rem]"
+          placeholder="Pesquise cafe"
+          className=" h-[38px] w-[38%] p-3 text-[1.5rem] border-solid border-[1px]  border-yellow-light rounded-full bg-transparent outline-none -mt-[5rem] text-yellow-dark"
         />
       </div>
       <div className="mx-[200px] mt-[3rem]">
