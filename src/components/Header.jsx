@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import logoImage from "../assets/coffeeLogo.svg";
 import { MapPin, ShoppingCart } from "@phosphor-icons/react";
+import { useContext } from "react";
+import { CoffeeCartConext } from "../contexts/CoffeeCartConext";
 const Header = () => {
+  const { cartItems } = useContext(CoffeeCartConext);
   return (
     <>
       <header className="mx-[135px] pt-16 ">
@@ -20,6 +23,11 @@ const Header = () => {
               className="text-yellow-dark bg-yellow-light py-3 px-5 rounded-lg cursor-pointer"
             >
               <ShoppingCart size={22} weight="fill" />
+              {cartItems.length > 0 && (
+                <span className=" w-[2rem] h-[2rem] bg-yellow-dark absolute rounded-full text-white flex items-center justify-center font-bold text-[1.3rem] -mt-[4.3rem] ml-[2.6rem]">
+                  {cartItems.length}
+                </span>
+              )}
             </Link>
           </div>
         </div>

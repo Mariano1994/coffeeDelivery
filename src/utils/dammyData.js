@@ -13,6 +13,8 @@ import coffeeHavaianoImage from "../assets/products/6.png";
 import coffeeArabeImage from "../assets/products/7.png";
 import coffeeIrlandesImage from "../assets/products/12.png";
 
+export const DELIVERY_TAX = 300;
+
 export const dammyData = [
   {
     id: crypto.randomUUID(),

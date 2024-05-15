@@ -1,8 +1,12 @@
 import AddressForm from "../components/AddressForm";
 import PaymentOptinos from "../components/PaymentOptions";
 import CartCoffeeItem from "../components/CartCoffeeItem";
+import { useContext } from "react";
+import { CoffeeCartConext } from "../contexts/CoffeeCartConext";
+import { DELIVERY_TAX } from "../utils/dammyData";
 
 const Cart = () => {
+  const { cartItems, totalToPay } = useContext(CoffeeCartConext);
   return (
     <>
       <div className="mx-[135px] bg-background mt-[70px] pb-[3rem]">
@@ -22,18 +26,19 @@ const Cart = () => {
               Cafés selecionados
             </strong>
             <div className="w-[448px] h-auto bg-base-card rounded-tr-[35px] rounded-bl-[35px] rounded-tl-lg rounded-br-lg px-[40px]">
-              <CartCoffeeItem />
-              <CartCoffeeItem />
+              {cartItems.map((item) => (
+                <CartCoffeeItem item={item} key={item.id} />
+              ))}
 
               <div className="mt-[1.5rem] flex flex-col gap-[0.5rem] mb-[2rem]">
                 <div className="flex items-center justify-between">
                   <span className=" text-[1.6rem] text-base-text">
                     {" "}
-                    Total de items
+                    Total de pedidos
                   </span>
                   <span className=" text-[1.6rem] text-base-text">
                     {" "}
-                    2000 kz
+                    {totalToPay} kz
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
@@ -41,7 +46,10 @@ const Cart = () => {
                     {" "}
                     Entrega
                   </span>
-                  <span className=" text-[1.6rem] text-base-text"> 300 kz</span>
+                  <span className=" text-[1.6rem] text-base-text">
+                    {" "}
+                    {DELIVERY_TAX} kz
+                  </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className=" text-[2rem] font-semibold text-base-subtitle">
@@ -50,7 +58,7 @@ const Cart = () => {
                   </span>
                   <span className=" text-[2rem] font-semibold text-base-subtitle">
                     {" "}
-                    2300
+                    {totalToPay + DELIVERY_TAX}
                   </span>
                 </div>
 

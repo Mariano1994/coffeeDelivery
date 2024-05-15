@@ -1,6 +1,10 @@
 import { ShoppingCart } from "@phosphor-icons/react";
+import { useContext } from "react";
+import { CoffeeCartConext } from "../contexts/CoffeeCartConext";
 
 const CoffeeItem = ({ coffeeData }) => {
+  const { handlerAddItemOnCart } = useContext(CoffeeCartConext);
+
   return (
     <>
       <li className="flex flex-col items-center justify-center w-[26.5rem] h-[31rem] bg-base-card rounded-tr-[35px] rounded-bl-[35px] gap-4 px-4 mb-[10rem]">
@@ -42,7 +46,10 @@ const CoffeeItem = ({ coffeeData }) => {
                 +
               </span>
             </div>
-            <span className="text-white bg-purple-dark py-3 px-5 rounded-lg cursor-pointer">
+            <span
+              className="text-white bg-purple-dark py-3 px-5 rounded-lg cursor-pointer hover:brightness-120"
+              onClick={() => handlerAddItemOnCart(coffeeData)}
+            >
               <ShoppingCart size={22} weight="fill" />
             </span>
           </div>
