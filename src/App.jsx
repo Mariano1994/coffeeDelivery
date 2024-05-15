@@ -1,14 +1,15 @@
 import { Outlet } from "react-router-dom";
-import CoffeeMenu from "./components/CoffeeMenu";
 import Header from "./components/Header";
-import Home from "./pages/Home";
+import { CoffeeCartConextProvider } from "./contexts/CoffeeCartConext";
 
 const App = () => {
   return (
-    <div className=" w-full h-full bg-background relative">
-      <Header />
-      <Outlet />
-    </div>
+    <CoffeeCartConextProvider>
+      <div className=" w-full h-full bg-background relative">
+        <Header />
+        <Outlet />
+      </div>
+    </CoffeeCartConextProvider>
   );
 };
 
