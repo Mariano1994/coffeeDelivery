@@ -1,14 +1,26 @@
 import { Link } from "react-router-dom";
 import logoImage from "../assets/coffeeLogo.svg";
 import { MapPin, ShoppingCart } from "@phosphor-icons/react";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CoffeeCartConext } from "../contexts/CoffeeCartConext";
 const Header = () => {
   const { cartItems } = useContext(CoffeeCartConext);
+
+  useEffect(() => {
+    let header = document.getElementById("header");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 55) {
+        header.style.background = "#fafafa";
+        header.style.paddingBottom = "20px";
+      } else {
+        header.style.background = "transparent";
+      }
+    });
+  });
   return (
     <>
-      <header className="mx-[135px] pt-16 ">
-        <div className="flex justify-between items-center">
+      <header className="px-[135px] pt-16 w-full fixed z-50" id="header">
+        <div className="flex justify-between items-center ">
           <Link to="/">
             <img src={logoImage} alt="coffe delivery logo" />
           </Link>

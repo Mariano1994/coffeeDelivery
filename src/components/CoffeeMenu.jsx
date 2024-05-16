@@ -5,7 +5,7 @@ const CoffeeMenu = () => {
   const [coffeeData, setCoffeeData] = [dammyData];
   return (
     <>
-      <div className="mx-[135px] mt-[5.5rem] flex items-center gap-8">
+      <div className="mx-[135px] mt-[14.5rem] flex items-center gap-8">
         <h2 className="font-['Baloo_2'] text-[3.5rem] font-bold mb-[4rem]">
           {" "}
           Nossos cafés

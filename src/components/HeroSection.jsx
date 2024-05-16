@@ -7,11 +7,11 @@ const HeroSection = () => {
   return (
     <>
       <div className="w-full bg-hero h-[544px]">
-        <div className="mx-[135px] py-[9.4rem]  ">
+        <div className="mx-[135px] py-[9.4rem]">
           <div className="flex items-center justify-between">
             <div className=" flex flex-col">
               <div className=" flex flex-col gap-[2rem]">
-                <h1 className=" font-['Baloo_2'] text-[5.7rem]  font-extrabold leading-normal">
+                <h1 className=" font-['Baloo_2'] text-[5.7rem]  font-extrabold leading-normal mt-[10rem]">
                   Encontre o café perfeito <br /> para qualquer hora do dia
                 </h1>
                 <p className=" text-[2rem] font-normal">
@@ -30,7 +30,7 @@ const HeroSection = () => {
           <ArrowFatLinesDown
             size={28}
             weight="fill"
-            className="text-yellow mt-[15rem] animate-pulse"
+            className="text-yellow mt-[15rem] animate-pulse z-0"
           />
         </div>
       </div>

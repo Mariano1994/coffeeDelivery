@@ -6,8 +6,8 @@ import { Toaster } from "sonner";
 const App = () => {
   return (
     <CoffeeCartConextProvider>
-      <Toaster richColors position="top-right" />
-      <div className=" w-full h-full bg-background relative">
+      <Toaster richColors />
+      <div className=" w-full h-full bg-background">
         <Header />
         <Outlet />
       </div>

@@ -11,7 +11,7 @@ const Cart = () => {
   return (
     <>
       {cartItems.length > 0 ? (
-        <div className="mx-[135px] bg-background mt-[70px] pb-[3rem]">
+        <div className="mx-[135px] bg-background py-[175px] pb-[3rem]">
           <div className="flex items-start justify-between">
             <div className="flex flex-col gap-8">
               <strong className="text-[2.5rem] font-['baloo_2']">
