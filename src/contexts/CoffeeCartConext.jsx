@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-
+import { Toaster, toast } from "sonner";
 const CoffeeCartConext = createContext();
 
 const CoffeeCartConextProvider = ({ children }) => {
@@ -8,9 +8,10 @@ const CoffeeCartConextProvider = ({ children }) => {
   const handlerAddItemOnCart = (item) => {
     setCartItems(() => {
       if (cartItems.includes(item)) {
-        console.log(`already exist on cart`);
+        toast.error("Item ja foi adicionado");
         return [...cartItems];
       } else {
+        toast.success("Item adicionado com sucesso");
         return [item, ...cartItems];
       }
     });
@@ -18,6 +19,7 @@ const CoffeeCartConextProvider = ({ children }) => {
 
   const handlerRemoveItemFromCart = (id) => {
     setCartItems(cartItems.filter((item) => item.id !== id));
+    toast.error("Item removido com sucesso");
   };
 
   const handlerIncreaseQuatityOfItems = (id) => {
@@ -52,19 +54,21 @@ const CoffeeCartConextProvider = ({ children }) => {
   );
 
   return (
-    <CoffeeCartConext.Provider
-      value={{
-        cartItems,
-        setCartItems,
-        handlerAddItemOnCart,
-        handlerRemoveItemFromCart,
-        totalToPay,
-        handlerIncreaseQuatityOfItems,
-        handlerDecrementQuantityOfItems,
-      }}
-    >
-      {children}
-    </CoffeeCartConext.Provider>
+    <>
+      <CoffeeCartConext.Provider
+        value={{
+          cartItems,
+          setCartItems,
+          handlerAddItemOnCart,
+          handlerRemoveItemFromCart,
+          totalToPay,
+          handlerIncreaseQuatityOfItems,
+          handlerDecrementQuantityOfItems,
+        }}
+      >
+        {children}
+      </CoffeeCartConext.Provider>
+    </>
   );
 };
 
