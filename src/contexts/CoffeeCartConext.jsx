@@ -6,7 +6,14 @@ const CoffeeCartConextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   const handlerAddItemOnCart = (item) => {
-    setCartItems(() => [item, ...cartItems]);
+    setCartItems(() => {
+      if (cartItems.includes(item)) {
+        console.log(`already exist on cart`);
+        return [...cartItems];
+      } else {
+        return [item, ...cartItems];
+      }
+    });
   };
 
   const handlerRemoveItemFromCart = (id) => {
@@ -43,6 +50,7 @@ const CoffeeCartConextProvider = ({ children }) => {
     (total, item) => (total += item.price),
     0
   );
+
   return (
     <CoffeeCartConext.Provider
       value={{

@@ -1,5 +1,5 @@
 import { Trash } from "@phosphor-icons/react";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CoffeeCartConext } from "../contexts/CoffeeCartConext";
 
 const CartCoffeeItem = ({ item }) => {
@@ -35,12 +35,12 @@ const CartCoffeeItem = ({ item }) => {
                   +
                 </span>
               </div>
-              <div className="flex items-center py-3 px-5 bg-base-button text-[1.5rem] rounded-lg gap-4 cursor-pointer hover:brightness-95">
+              <div
+                className="flex items-center py-3 px-5 bg-base-button text-[1.5rem] rounded-lg gap-4 cursor-pointer hover:brightness-95"
+                onClick={() => handlerRemoveItemFromCart(item.id)}
+              >
                 <Trash size={14} className="text-purple" />
-                <span
-                  className="text-base-text text-[1.2rem]"
-                  onClick={() => handlerRemoveItemFromCart(item.id)}
-                >
+                <span className="text-base-text text-[1.2rem]">
                   {"remover".toUpperCase()}
                 </span>
               </div>
