@@ -4,6 +4,7 @@ import CartCoffeeItem from "../components/CartCoffeeItem";
 import { useContext } from "react";
 import { CoffeeCartConext } from "../contexts/CoffeeCartConext";
 import { DELIVERY_TAX } from "../utils/dammyData";
+import EmptyPage from "./EmptyPage";
 
 const Cart = () => {
   const { cartItems, totalToPay } = useContext(CoffeeCartConext);
@@ -72,7 +73,7 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <h1> Yor cart is Empty</h1>
+        <EmptyPage />
       )}
     </>
   );
