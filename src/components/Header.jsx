@@ -1,7 +1,8 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import logoImage from "../assets/coffeeLogo.svg";
 import { MapPin, ShoppingCart } from "@phosphor-icons/react";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { CoffeeCartConext } from "../contexts/CoffeeCartConext";
 const Header = () => {
   const { cartItems } = useContext(CoffeeCartConext);
@@ -20,7 +21,7 @@ const Header = () => {
   return (
     <>
       <header className="px-[135px] pt-16 w-full fixed z-50" id="header">
-        <div className="flex justify-between items-center ">
+        <div className="flex justify-between items-center">
           <Link to="/">
             <img src={logoImage} alt="coffe delivery logo" />
           </Link>

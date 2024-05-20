@@ -5,13 +5,13 @@ import { Toaster } from "sonner";
 
 const App = () => {
   return (
-    <CoffeeCartConextProvider>
+    <>
       <Toaster richColors />
       <div className=" w-full h-full bg-background">
         <Header />
         <Outlet />
       </div>
-    </CoffeeCartConextProvider>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
+import React from "react";
 import { createContext, useState } from "react";
-import { Toaster, toast } from "sonner";
+import { toast } from "sonner";
 const CoffeeCartConext = createContext();
 
 const CoffeeCartConextProvider = ({ children }) => {
