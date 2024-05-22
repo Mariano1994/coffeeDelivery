@@ -1,3 +1,4 @@
+import React from "react";
 import CoffeeMenu from "../components/CoffeeMenu";
 import HeroSection from "../components/HeroSection";
 

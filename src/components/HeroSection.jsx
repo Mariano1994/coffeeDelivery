@@ -1,3 +1,4 @@
+import React from "react";
 import coffee from "../assets/coffee.png";
 import Services from "./Services";
 import Testimonials from "./Testimonials";

@@ -1,3 +1,4 @@
+import React from "react";
 import CoffeeItem from "./CoffeeItem";
 import { dammyData } from "../utils/dammyData";
 

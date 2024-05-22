@@ -5,7 +5,6 @@ import { CoffeeCartConext } from "../contexts/CoffeeCartConext";
 
 const CoffeeItem = ({ coffeeData }) => {
   const { handlerAddItemOnCart } = useContext(CoffeeCartConext);
-  console.log(coffeeData);
 
   return (
     <>

@@ -1,3 +1,4 @@
+import React from "react";
 import { Timer, ShoppingCart, Coffee, Package } from "@phosphor-icons/react";
 
 const Services = () => {
