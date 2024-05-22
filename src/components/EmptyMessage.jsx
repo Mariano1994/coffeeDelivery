@@ -1,3 +1,4 @@
+import React from "react";
 import { ShoppingBag } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 

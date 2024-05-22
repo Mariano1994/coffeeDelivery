@@ -51,7 +51,7 @@ const CoffeeItem = ({ coffeeData }) => {
               className="text-white bg-purple-dark py-3 px-5 rounded-lg cursor-pointer hover:brightness-120"
               onClick={() => handlerAddItemOnCart(coffeeData)}
             >
-              <ShoppingCart size={22} weight="fill" />
+              <ShoppingCart size={22} weight="fill" data-testid="addButton" />
             </span>
           </div>
         </div>

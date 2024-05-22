@@ -1,3 +1,4 @@
+import React from "react";
 import EmptyMessage from "../components/EmptyMessage";
 
 const EmptyPage = () => {

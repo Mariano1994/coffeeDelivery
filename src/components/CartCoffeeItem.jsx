@@ -1,3 +1,4 @@
+import React from "react";
 import { Trash } from "@phosphor-icons/react";
 import { useContext } from "react";
 import { CoffeeCartConext } from "../contexts/CoffeeCartConext";

@@ -4,6 +4,7 @@ import logoImage from "../assets/coffeeLogo.svg";
 import { MapPin, ShoppingCart } from "@phosphor-icons/react";
 import { useContext, useEffect } from "react";
 import { CoffeeCartConext } from "../contexts/CoffeeCartConext";
+
 const Header = () => {
   const { cartItems } = useContext(CoffeeCartConext);
 
@@ -20,7 +21,10 @@ const Header = () => {
   });
   return (
     <>
-      <header className="px-[135px] pt-16 w-full fixed z-50" id="header">
+      <header
+        className="px-[135px] pt-16 w-full fixed z-50"
+        data-testid="header"
+      >
         <div className="flex justify-between items-center">
           <Link to="/">
             <img src={logoImage} alt="coffe delivery logo" />
@@ -37,7 +41,10 @@ const Header = () => {
             >
               <ShoppingCart size={22} weight="fill" />
               {cartItems.length > 0 && (
-                <span className=" w-[2rem] h-[2rem] bg-yellow-dark absolute rounded-full text-white flex items-center justify-center font-bold text-[1.3rem] -mt-[4.3rem] ml-[2.6rem]">
+                <span
+                  className=" w-[2rem] h-[2rem] bg-yellow-dark absolute rounded-full text-white flex items-center justify-center font-bold text-[1.3rem] -mt-[4.3rem] ml-[2.6rem]"
+                  data-testid="itemsOnCart"
+                >
                   {cartItems.length}
                 </span>
               )}

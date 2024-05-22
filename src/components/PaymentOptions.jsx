@@ -1,3 +1,4 @@
+import React from "react";
 import { CurrencyDollar, CreditCard, Bank, Money } from "@phosphor-icons/react";
 
 const PaymentOptinos = () => {
