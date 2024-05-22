@@ -12,7 +12,7 @@ const CartCoffeeItem = ({ item }) => {
 
   return (
     <>
-      <div className="flex items-start py-[25px]">
+      <div className="flex items-start py-[25px]" data-testid="cartItem">
         <div className="flex items-center gap-8 flex-1">
           <img src={item.image} className=" w-[8rem] h-[8rem]" />
           <div className="flex flex-col">

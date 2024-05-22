@@ -46,4 +46,9 @@ describe("Home component", () => {
     expect(itemsOnCart).toBeInTheDocument();
     expect(itemsOnCart).toHaveTextContent(1);
   });
+
+  it("Should render the numbers of items in shopping cart", () => {
+    const itemOnCart = screen.getByTestId("cartItem");
+    expect(itemOnCart).toBeInTheDocument();
+  });
 });
