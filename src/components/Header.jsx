@@ -24,6 +24,7 @@ const Header = () => {
       <header
         className="px-[135px] pt-16 w-full fixed z-50"
         data-testid="header"
+        id="header"
       >
         <div className="flex justify-between items-center">
           <Link to="/">
