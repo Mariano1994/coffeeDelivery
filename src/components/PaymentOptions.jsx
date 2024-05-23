@@ -1,3 +1,4 @@
+import React from "react";
 import { CurrencyDollar, CreditCard, Bank, Money } from "@phosphor-icons/react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";

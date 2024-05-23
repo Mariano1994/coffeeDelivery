@@ -4,11 +4,14 @@ import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes/routes.jsx";
 import { CoffeeCartConextProvider } from "./contexts/CoffeeCartConext.jsx";
+import { AddressFormContextProvider } from "./contexts/AddressFormContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <CoffeeCartConextProvider>
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
-  </CoffeeCartConextProvider>
+  <AddressFormContextProvider>
+    <CoffeeCartConextProvider>
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>
+    </CoffeeCartConextProvider>
+  </AddressFormContextProvider>
 );

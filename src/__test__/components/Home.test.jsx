@@ -7,17 +7,20 @@ import { CoffeeCartConextProvider } from "../../contexts/CoffeeCartConext";
 import Header from "../../components/Header";
 import Cart from "../../pages/Cart";
 import { BrowserRouter } from "react-router-dom";
+import { AddressFormContextProvider } from "../../contexts/AddressFormContext";
 
 describe("Home component", () => {
   it("it should render home componet with all the children components", () => {
     render(
-      <BrowserRouter>
-        <CoffeeCartConextProvider>
-          <Header />
-          <Home />
-          <Cart />
-        </CoffeeCartConextProvider>
-      </BrowserRouter>
+      <AddressFormContextProvider>
+        <BrowserRouter>
+          <CoffeeCartConextProvider>
+            <Header />
+            <Home />
+            <Cart />
+          </CoffeeCartConextProvider>
+        </BrowserRouter>
+      </AddressFormContextProvider>
     );
   });
 

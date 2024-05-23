@@ -1,6 +1,18 @@
 import React from "react";
 import { MapPin } from "@phosphor-icons/react";
+import { useContext } from "react";
+import { AddressFormContext } from "../contexts/AddressFormContext";
+
 const AddressForm = () => {
+  const {
+    userInfo,
+    handlerSetCity,
+    handlerSetContact,
+    handlerSetStreet,
+    handlerSetStreetNumber,
+    handlerSetUserId,
+    handlerSetUserName,
+  } = useContext(AddressFormContext);
   return (
     <>
       <div className="bg-base-card rounded-lg p-[40px]">
@@ -19,37 +31,51 @@ const AddressForm = () => {
         <form className="w-full mt-[32px] flex flex-col gap-[16px] ">
           <input
             type="text"
-            placeholder="CEP"
+            placeholder="BI"
+            value={userInfo.userId}
+            onChange={handlerSetUserId}
             className="w-[50%] h-[42px] p-3 text-[1.5rem] border-solid border-[1px] rounded-lg bg-base-input outline-none"
           />
           <input
             type="text"
-            placeholder="Rua"
+            placeholder="Nome"
             className=" h-[42px] p-3 text-[1.5rem] border-solid border-[1px] rounded-lg bg-base-input outline-none"
+            value={userInfo.userName}
+            onChange={handlerSetUserName}
+            required
           />
           <div className="w-full flex gap-4">
             <input
-              type="text"
+              type="number"
               placeholder="Contacto"
               className=" h-[42px] p-3 text-[1.5rem] border-solid border-[1px] rounded-lg bg-base-input outline-none"
+              value={userInfo.userContact}
+              onChange={handlerSetContact}
             />
             <input
               type="text"
-              placeholder="Nome"
+              placeholder="Rua"
               className=" h-[42px] p-3 text-[1.5rem] border-solid border-[1px] rounded-lg bg-base-input outline-none flex-1"
+              value={userInfo.userAddress.street}
+              onChange={handlerSetStreet}
             />
           </div>
 
           <div className="flex items-center justify-between gap-5">
             <input
-              type="text"
-              placeholder="Bairro"
+              type="number"
+              placeholder="Rua numero"
               className=" h-[42px] p-3 text-[1.5rem] border-solid border-[1px] rounded-lg bg-base-input outline-none flex-1"
+              value={userInfo.userAddress.streetNumber}
+              onChange={handlerSetStreetNumber}
             />
             <input
               type="text"
               placeholder="Cidade"
               className=" h-[42px] p-3 text-[1.5rem] border-solid border-[1px] rounded-lg bg-base-input outline-none flex-1"
+              value={userInfo.userAddress.city}
+              onChange={handlerSetCity}
+              required
             />
           </div>
         </form>
