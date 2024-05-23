@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { CoffeeCartConext } from "../contexts/CoffeeCartConext";
 import { DELIVERY_TAX } from "../utils/dammyData";
 import EmptyPage from "./EmptyPage";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cartItems, totalToPay } = useContext(CoffeeCartConext);
@@ -65,9 +66,20 @@ const Cart = () => {
                     </span>
                   </div>
 
-                  <button className="w-full py-[1.5rem] text-white bg-yellow rounded-xl text-[1.4rem] mt-8 font-bold hover:brightness-95">
-                    {"Confirmar Pedido".toUpperCase()}
-                  </button>
+                  <div className="flex items-center justify-between gap-8">
+                    <Link
+                      to="/"
+                      className="w-[50%] flex justify-center py-[1.5rem] text-purple bg-base-button border-purple border-[1px] rounded-xl text-[1.4rem] mt-8 font-bold hover:brightness-95"
+                    >
+                      {"Continuar a Comprar".toUpperCase()}
+                    </Link>
+                    <Link
+                      to="/order"
+                      className="w-[50%] flex justify-center py-[1.5rem] text-white bg-yellow rounded-xl text-[1.4rem] mt-8 font-bold hover:brightness-95"
+                    >
+                      {"Confirmar Pedido".toUpperCase()}
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
