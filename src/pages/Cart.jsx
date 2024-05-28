@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import AddressForm from "../components/AddressForm";
 import PaymentOptinos from "../components/PaymentOptions";
 import CartCoffeeItem from "../components/CartCoffeeItem";
@@ -7,9 +6,17 @@ import { CoffeeCartConext } from "../contexts/CoffeeCartConext";
 import { DELIVERY_TAX } from "../utils/dammyData";
 import EmptyPage from "./EmptyPage";
 import { Link } from "react-router-dom";
+import { AddressFormContext } from "../contexts/AddressFormContext";
 
 const Cart = () => {
-  const { cartItems, totalToPay } = useContext(CoffeeCartConext);
+  const { cartItems, totalToPay, setCartItems } = useContext(CoffeeCartConext);
+
+  const { userInfo } = useContext(AddressFormContext);
+
+  const handlerConfirmOrder = () => {
+    setCartItems([]);
+  };
+
   return (
     <>
       {cartItems.length > 0 ? (
@@ -74,7 +81,8 @@ const Cart = () => {
                       {"Continuar a Comprar".toUpperCase()}
                     </Link>
                     <Link
-                      to="/order"
+                      to={userInfo.userName ? "/order" : "error"}
+                      onClick={handlerConfirmOrder}
                       className="w-[50%] flex justify-center py-[1.5rem] text-white bg-yellow rounded-xl text-[1.4rem] mt-8 font-bold hover:brightness-95"
                     >
                       {"Confirmar Pedido".toUpperCase()}

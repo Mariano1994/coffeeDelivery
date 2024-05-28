@@ -4,42 +4,44 @@ import { createContext, useState } from "react";
 export const AddressFormContext = createContext();
 
 export const AddressFormContextProvider = ({ children }) => {
-  const [userInfo, setUserInfo] = useState({
-    userName: "",
-    userId: "",
-    userContact: "",
-    userAddress: {
-      city: "",
-      street: "",
-      streetNumber: "",
-    },
-  });
+  const [userName, setUserName] = useState("");
+  const [userId, setUsertId] = useState("");
+  const [userContact, setUserContact] = useState("");
+  const [userCity, setUserCity] = useState("");
+  const [userStreet, setUserStreet] = useState("");
+  const [userStreetNumber, setUserStreetNumber] = useState("");
 
   const handlerSetUserName = (event) => {
-    setUserInfo({ ...userInfo, userName: event.target.valeu });
+    setUserName(event.target.value);
   };
 
   const handlerSetUserId = (event) => {
-    setUserInfo({ ...userInfo, userId: event.target.valeu });
+    setUsertId(event.target.value);
   };
 
   const handlerSetContact = (event) => {
-    setUserInfo({ ...userInfo, userContact: event.target.valeu });
+    setUserContact(event.target.value);
   };
 
   const handlerSetCity = (event) => {
-    setUserInfo({ ...userInfo, userAddress: { city: event.target.valeu } });
+    setUserCity(event.target.value);
   };
 
   const handlerSetStreet = (event) => {
-    setUserInfo({ ...userInfo, userAddress: { street: event.target.valeu } });
+    setUserStreet(event.target.value);
   };
 
   const handlerSetStreetNumber = (event) => {
-    setUserInfo({
-      ...userInfo,
-      userAddress: { streetNumber: event.target.valeu },
-    });
+    setUserStreetNumber(event.target.value);
+  };
+
+  const userInfo = {
+    userName,
+    userId,
+    userContact,
+    userCity,
+    userStreet,
+    userStreetNumber,
   };
 
   return (

@@ -50,7 +50,7 @@ const CartCoffeeItem = ({ item }) => {
         </div>
         <span className="text-base-text text-[2rem] font-bold">
           {" "}
-          {item.price * item.quantity} kz
+          {item.price} kz
         </span>
       </div>
       <div className="border-[0.1px] border-base-button w-full"></div>

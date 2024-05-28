@@ -103,8 +103,8 @@ export const dammyData = [
     coffee: "Chocolate Quente",
     description: "Bebida feita com chocolate dissolvido no leite quente e café",
     categories: ["Especial", "Com Leite"],
-    price: 2000,
     quantity: 1,
+    price: 2000,
     image: coffeeChocolateImage,
   },
 

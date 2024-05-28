@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { createContext, useState } from "react";
 import { toast } from "sonner";
+import { AddressFormContext } from "./AddressFormContext";
 const CoffeeCartConext = createContext();
 
 const CoffeeCartConextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [totalToPay, setTotalToPay] = useState(
+    cartItems.reduce((total, item) => (total += item.price), 0)
+  );
 
   const handlerAddItemOnCart = (item) => {
     setCartItems(() => {
@@ -30,6 +34,7 @@ const CoffeeCartConextProvider = ({ children }) => {
           ? {
               ...item,
               quantity: item.quantity + 1,
+              price: item.price * item.quantity,
             }
           : item
       )
@@ -49,15 +54,22 @@ const CoffeeCartConextProvider = ({ children }) => {
     );
   };
 
-  const totalToPay = cartItems.reduce(
-    (total, item) => (total += item.price),
-    0
-  );
+  const handlerClearShoppingCart = () => {
+    setCartItems([]);
+  };
+
+  // let totalToPay = cartItems.reduce((total, item) => (total += item.price), 0);
+  useEffect(() => {
+    setTotalToPay(() =>
+      cartItems.reduce((total, item) => (total += item.price), 0)
+    );
+  }, [cartItems]);
 
   return (
     <>
       <CoffeeCartConext.Provider
         value={{
+          handlerClearShoppingCart,
           cartItems,
           setCartItems,
           handlerAddItemOnCart,

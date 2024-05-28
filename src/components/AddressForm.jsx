@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MapPin } from "@phosphor-icons/react";
 import { useContext } from "react";
 import { AddressFormContext } from "../contexts/AddressFormContext";
@@ -13,6 +13,7 @@ const AddressForm = () => {
     handlerSetUserId,
     handlerSetUserName,
   } = useContext(AddressFormContext);
+
   return (
     <>
       <div className="bg-base-card rounded-lg p-[40px]">
@@ -39,9 +40,9 @@ const AddressForm = () => {
           <input
             type="text"
             placeholder="Nome"
+            onChange={handlerSetUserName}
             className=" h-[42px] p-3 text-[1.5rem] border-solid border-[1px] rounded-lg bg-base-input outline-none"
             value={userInfo.userName}
-            onChange={handlerSetUserName}
             required
           />
           <div className="w-full flex gap-4">
@@ -56,7 +57,7 @@ const AddressForm = () => {
               type="text"
               placeholder="Rua"
               className=" h-[42px] p-3 text-[1.5rem] border-solid border-[1px] rounded-lg bg-base-input outline-none flex-1"
-              value={userInfo.userAddress.street}
+              value={userInfo.userStreet}
               onChange={handlerSetStreet}
             />
           </div>
@@ -66,14 +67,14 @@ const AddressForm = () => {
               type="number"
               placeholder="Rua numero"
               className=" h-[42px] p-3 text-[1.5rem] border-solid border-[1px] rounded-lg bg-base-input outline-none flex-1"
-              value={userInfo.userAddress.streetNumber}
+              value={userInfo.userStreetNumber}
               onChange={handlerSetStreetNumber}
             />
             <input
               type="text"
               placeholder="Cidade"
               className=" h-[42px] p-3 text-[1.5rem] border-solid border-[1px] rounded-lg bg-base-input outline-none flex-1"
-              value={userInfo.userAddress.city}
+              value={userInfo.userCity}
               onChange={handlerSetCity}
               required
             />
